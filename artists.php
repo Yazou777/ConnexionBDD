@@ -9,7 +9,7 @@
     $requete = $db->query("SELECT * FROM artist");
     // on récupère tous les résultats trouvés dans une variable
     $tableau = $requete->fetchAll(PDO::FETCH_OBJ);
-    var_dump($tableau);
+    // var_dump($tableau);
     // on clôt la requête en BDD
     $requete->closeCursor();
 
@@ -37,7 +37,7 @@
 
         <?php foreach ($tableau as $artist): ?>
 
-        <?php var_dump($artist); // Le var_dump() est écrit à titre informatif ?>
+        <?php /*var_dump($artist);*/ // Le var_dump() est écrit à titre informatif ?>
         <tr>
             <td><?= $artist->artist_id ?></td>
             <td><?= $artist->artist_name ?></td>
