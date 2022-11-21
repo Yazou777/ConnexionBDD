@@ -52,6 +52,9 @@
     
     <legend class="h1">Modifier un vinyle</legend>
 
+     <!-- IMPORTANT recup name id pour le script qui suit -->
+    <input type="hidden" name="id" value="<?= $myDisc->disc_id ?>">
+
     <div class="form-group">
         <label for="titre">Titre :</label>
         <input type="text" name="titre" id="titre" class="form-control" value="<?= $myDisc->disc_title ?>">
@@ -111,6 +114,7 @@
         
 
     </form>
+
         <a href="disc.php"><button class="btn btn-primary btn-sm">Retour</button></a>
         <input type="reset" value="reset" class="btn btn-primary btn-sm">
    

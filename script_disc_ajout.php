@@ -37,7 +37,7 @@ else
 
 
 
-$monimage =$_FILES["fichier"]["name"];
+$monimage =$rename.".".$file[1];
 var_dump($monimage);
 ?>
 
