@@ -1,6 +1,6 @@
 <?php
 var_dump($_FILES);
-
+if ($_FILES['fichier']['error'] == 0){
 // On met les types autorisés dans un tableau (ici pour une image)
 $aMimeTypes = array("image/gif", "image/jpeg", "image/pjpeg", "image/png", "image/x-png", "image/tiff");
 
@@ -39,13 +39,17 @@ else
 
 $monimage =$rename.".".$file[1];
 var_dump($monimage);
+}
 ?>
 
 
 
 <?php
     // Récupération du Nom :
-    if (isset($_POST['titre']) && $_POST['titre'] != "") {
+
+    
+    
+    if (isset($_POST['titre']) && $_POST['titre'] != "" ) {
         $titre = $_POST['titre'];
     }
     else {

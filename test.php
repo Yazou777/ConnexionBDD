@@ -1,6 +1,18 @@
-$picture = (isset($_POST['fichier']) && $_POST['fichier'] != "") ? $_POST['fichier'] : Null;  
-|| $picture == Null
-$artist = (isset($_POST['artist']) && $_POST['artist'] != "") ? $_POST['artist'] : Null;
-|| $artist == Null 
 
-$requete = $db->prepare("UPDATE disc SET disc_title = :titre, disc_year = :year, disc_genre = :genre, disc_label = :label, disc_price = :price, disc.artist_id = :artist WHERE disc_id = :id;"); 
+
+<input type="text" name="year" id="year" class="form-control" >
+
+<?php
+
+$f = :year;
+function mdpComplexe($mdp){
+    $resultat = preg_match ('/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8}/', :year);
+    if ($resultat == true) {
+      echo 'mdp sécurisé<br>';
+    }
+    else {
+      echo 'mdp faible<br>';
+    }
+  }
+  mdpComplexe('TopSecret42')
+      ?>
