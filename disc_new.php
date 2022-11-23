@@ -29,7 +29,7 @@
 <body>
 
 
-    <form action ="script_disc_ajout.php" method="post" enctype="multipart/form-data" onSubmit="return checkForm(this);">
+    <form action ="script_disc_ajout.php" id="fajout" method="post" enctype="multipart/form-data" onSubmit="return checkForm(this);">
 
 <fieldset>
     
@@ -37,14 +37,14 @@
 
     <div class="form-group">
         <label for="titre">Titre :</label>
-        <input type="text" name="titre" id="titre" class="form-control" >
+        <input type="text" name="titre" id="titre" class="form-control"  required >
         <small id="usernameHelp" class="form-text">Username must be between 5 - 12 characters.</small>
         
     </div>
 
     <div class="form-group">
                        <label for="artist">Nom de l'artiste :</label>
-                       <select class="form-control"  id="artist" name="artist" >
+                       <select class="form-control"  id="artist" name="artist" required>
                        <option value=""  selected>Veuillez séléctionner un sujet</option>
                     <?php foreach ($tableau as $artist): ?>
 
@@ -59,26 +59,26 @@
     
         <div class="form-group">
         <label for="year">Année de sortie :</label>
-        <input type="text" name="year" id="year" class="form-control" >
+        <input type="text" name="year" id="year" class="form-control" required >
         <small id="usernameHelp" class="form-text">Entrez une Année a 4 chiffres</small>
         </div>
         
 
         <div class="form-group">
         <label for="genre">Genre :</label>
-        <input type="text" name="genre" id="genre" class="form-control">
+        <input type="text" name="genre" id="genre" class="form-control" required>
         </div>
         
 
         <div class="form-group">
         <label for="label">Label :</label>
-        <input type="text" name="label" id="label" class="form-control">
+        <input type="text" name="label" id="label" class="form-control" required>
         </div>
         
 
         <div class="form-group">
         <label for="price">Prix :</label>
-        <input type="text" name="price" id="price" class="form-control">
+        <input type="text" name="price" id="price" class="form-control" required>
         <small id="usernameHelp" class="form-text">number and . only</small>
         </div>
 
@@ -93,10 +93,11 @@
         </fieldset>
         
       
-        <input class="btn btn-primary btn-sm"  type="submit" value="Ajouter">
+       
         
 
     </form>
+    <input class="btn btn-primary btn-sm" form="fajout" type="submit" value="Ajouter">
         <a href="disc.php"><button class="btn btn-primary btn-sm">Retour</button></a>
         <input type="reset" value="reset" class="btn btn-primary btn-sm">
    

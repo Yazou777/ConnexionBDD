@@ -57,13 +57,13 @@
 
     <div class="form-group">
         <label for="titre">Titre :</label>
-        <input type="text" name="titre" id="titre" class="form-control" value="<?= $myDisc->disc_title ?>">
+        <input type="text" name="titre" id="titre" class="form-control" value="<?= $myDisc->disc_title ?>" required>
         
     </div>
 
     <div class="form-group">
                        <label for="artist">Nom de l'artiste :</label>
-                       <select class="form-control"  id="artist" name="artist" >
+                       <select class="form-control"  id="artist" name="artist" required>
                        <option value="<?= $myDisc->artist_id ?>"  selected><?= $myDisc->artist_name ?></option>
                     <?php foreach ($tableau as $artist): ?>
 
@@ -78,26 +78,26 @@
     
         <div class="form-group">
         <label for="year">Année de sortie :</label>
-        <input type="text" name="year" id="year" class="form-control" value="<?= $myDisc->disc_year ?>">
+        <input type="text" name="year" id="year" class="form-control" value="<?= $myDisc->disc_year ?>" required>
         <small id="usernameHelp" class="form-text">Entrez une Année a 4 chiffres</small>
     </div>
         
 
         <div class="form-group">
         <label for="genre">Genre :</label>
-        <input type="text" name="genre" id="genre" class="form-control" value="<?= $myDisc->disc_genre ?>">
+        <input type="text" name="genre" id="genre" class="form-control" value="<?= $myDisc->disc_genre ?>" required>
         </div>
         
 
         <div class="form-group">
         <label for="label">Label :</label>
-        <input type="text" name="label" id="label" class="form-control" value="<?= $myDisc->disc_label ?>">
+        <input type="text" name="label" id="label" class="form-control" value="<?= $myDisc->disc_label ?>" required>
         </div>
         
 
         <div class="form-group">
         <label for="price">Prix :</label>
-        <input type="text" name="price" id="price" class="form-control" value="<?= $myDisc->disc_price ?>">
+        <input type="text" name="price" id="price" class="form-control" value="<?= $myDisc->disc_price ?>" required>
         <small id="usernameHelp" class="form-text">number and . only</small>   
     </div>
 

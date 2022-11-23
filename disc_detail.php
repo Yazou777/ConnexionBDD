@@ -87,14 +87,14 @@
         function geek() {
            if ((confirm("Etes vous sur ?")) == true) {
             document.location.href="script_disc_delete.php?id=<?= $myDisc->disc_id ?>"; 
-           }
-          
+        }  
         }
+
 </script>
 
 
         <a href="disc_modif.php?id=<?= $myDisc->disc_id ?>"><button class="btn btn-primary btn-sm">Modifier</button></a>
-        <a href=""  onclick="geek()" ><button class="btn btn-primary btn-sm">Supprimer</button></a>
+        <button onclick="geek()" class="btn btn-primary btn-sm ">Supprimer</button>
         <a href="disc.php"><button class="btn btn-primary btn-sm">Retour</button></a>
         
        
