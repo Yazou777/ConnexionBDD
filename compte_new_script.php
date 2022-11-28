@@ -14,6 +14,11 @@ var_dump($_POST['mdp']);
     $email = (isset($_POST['email']) && $_POST['email'] != "") ? $_POST['email'] : Null;
     var_dump($email);
    
+    $nom = (isset($_POST['nom']) && $_POST['nom'] != "") ? $_POST['nom'] : Null;
+
+    $prenom = (isset($_POST['prenom']) && $_POST['prenom'] != "") ? $_POST['prenom'] : Null;
+
+
     // En cas d'erreur, on renvoie vers le formulaire
     if ($mdp == Null) {
         header("Location: compte_new.php");
@@ -28,15 +33,42 @@ var_dump($_POST['mdp']);
     require "db_compte.php"; 
     $db = connexionBase();
 
+    //////////////////////////////////////////////On verifie que l'identifiant (ici l'email) soit unique dnas la base de donnée ///////////////////////////////
+
+
+    // on lance une requête pour chercher toutes les fiches d'artistes
+    $requete = $db->query("SELECT email FROM user where email like '$email'");
+    // on récupère tous les résultats trouvés dans une variable
+    $tableau = $requete->fetchAll(PDO::FETCH_OBJ);
+    // var_dump($tableau);
+    // on clôt la requête en BDD
+    $requete->closeCursor();
+
+var_dump($tableau);
+
+if(!empty($tableau))
+{
+    echo "email deja utiliser";
+    exit;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
 
 
 try {
     // Construction de la requête INSERT sans injection SQL :
-    $requete = $db->prepare("INSERT INTO auth (email, mdp) VALUES (:email, :mdp);"); 
+    $requete = $db->prepare("INSERT INTO user (email, mdp, nom, prenom) VALUES (:email, :mdp, :nom, :prenom);"); 
 
     // Association des valeurs aux paramètres via bindValue() :
     $requete->bindValue(":email", $email, PDO::PARAM_STR);
     $requete->bindValue(":mdp", $hashmdp, PDO::PARAM_STR);
+    $requete->bindValue(":nom", $nom, PDO::PARAM_STR);
+    $requete->bindValue(":prenom", $prenom, PDO::PARAM_STR);
 
     // Lancement de la requête :
     $requete->execute();

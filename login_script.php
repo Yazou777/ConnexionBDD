@@ -30,14 +30,30 @@ var_dump($_POST['mdp']);
     require "db_compte.php"; 
     $db = connexionBase();
 
+
+
+
+
+
+
      // on lance une requête pour chercher toutes les fiches d'artistes
-     $requete = $db->query("SELECT * FROM auth Where email like '$email'" );
+     $requete = $db->query("SELECT * FROM user Where email like '$email'" );
      // on récupère tous les résultats trouvés dans une variable
      $tableau = $requete->fetchAll(PDO::FETCH_OBJ);
      // var_dump($tableau);
      // on clôt la requête en BDD
      $requete->closeCursor();
  
+
+     var_dump($tableau);
+     if(empty($tableau))
+{
+    echo "email inexistant";
+    exit;
+}
+     
+
+
     var_dump($mdp);
      foreach ($tableau as $auth) {
      var_dump($auth);
@@ -48,11 +64,29 @@ var_dump($_POST['mdp']);
      }
     if ($verifymdp !=  true)
     {
+        session_start();
+        unset($_SESSION["auth"]);
+    
+        if (ini_get("session.use_cookies")) 
+        {
+            setcookie(session_name(), '', time()-42000);
+        }
+    
+        session_destroy();
+
+        header("Location: login_form.php");
+        exit;
+    }
+    else {
+        session_start();
+
+        $_SESSION["auth"] = $auth->prenom;
         header("Location: login_form.php");
         exit;
     }
 
 
+   
 
 
 

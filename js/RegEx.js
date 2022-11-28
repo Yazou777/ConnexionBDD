@@ -3,7 +3,7 @@ const inputs = document.querySelectorAll('input');
 const patterns = {
   titre: /.{1}/,
   year: /^[0-9]{4}$/,
-  price: /^[0-9\.]+$/,
+  price: /^\d+(?:[.]\d+)?$/i,
   phone: /^\d{3}-\d{3}-\d{4}$/
 };
 

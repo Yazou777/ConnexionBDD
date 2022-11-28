@@ -20,6 +20,17 @@
 
     <form action ="compte_new_script.php" method="post" onSubmit="return checkForm(this);">
 
+
+    <div class="form-group">
+        <label for="nom">Votre Nom</label><br>
+        <input type="text" name="nom" id="nom" class="form-control">
+    </div>
+
+
+    <div class="form-group">
+        <label for="prenom">Votre Prénom</label><br>
+        <input type="text" name="prenom" id="prenom" class="form-control">
+    </div>
     
 
     <div class="form-group">
@@ -42,11 +53,11 @@
 
 
         <input type="submit" value="créer">
-        <a href="login_form.php" class="btn btn-primary btn-sm ">Se connecter</a>
+        <a href="login_form.php" class="btn btn-primary btn-sm ">Retour</a>
      
 
     </form>
-
+    
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
