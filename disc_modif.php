@@ -31,7 +31,7 @@
 ?>
 
 
-<!DOCTYPE html>
+<!DOCTYPE html >
 <html lang="fr"  class="px-5 py-5">
 <head>
     <meta charset="UTF-8">
@@ -46,7 +46,7 @@
 
 
 
-    <form action ="script_disc_modif.php" method="post" enctype="multipart/form-data" onSubmit="return checkForm(this);">
+    <form  action ="script_disc_modif.php" method="post" enctype="multipart/form-data" onSubmit="return checkForm(this);">
 
 <fieldset>
     
