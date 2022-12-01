@@ -17,7 +17,7 @@
   <div class="polling_message">
     En attente
   </div>
-  <div class="cylon_eye"></div>
+  <div class="cylon_eye" ></div>
 </div>
 
 
